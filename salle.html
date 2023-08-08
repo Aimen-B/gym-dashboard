@@ -118,9 +118,9 @@
             <div>
 
               <div
-              class="border-2 ml-4 rounded-full px-6 justify-center text-white p-2 border-neutral-700"
+              class=" border-2 ml-4 rounded-full px-6 justify-center text-white p-2 border-neutral-700"
               >
-              <label  for="filer"></label>
+              <label  for="filter"></label>
               <select class="bg-neutral-800" name="filter" id="filter">
                 <option value="all">All</option>
                 <option value="presonne">presonnet</option>
@@ -138,9 +138,51 @@
           <div>
             <!-- Button Ajouter -->
             <div
+              onclick="ToggleModal('ajouter')"
               class="p-4 bg-emerald-200 rounded-xl hover:opacity-90 hover:cursor-pointer"
             >
               Ajouter un engistrement
+            </div>
+            <div id="ajouter" class="hidden absolute h-[80%] w-[60%] bg-neutral-700 right-[20%] z-50 rounded-xl pt-16 text-white text-xl">
+              <ul class="h-[100%] relative">
+                <li class="flex justify-center py-8">
+                  <label for="nom">Nom :</label>
+                  <input type="text" name="nom" id="nom" class="mx-4 bg-neutral-800 rounded-md px-6">
+                </li>
+                <li class="flex justify-center ">
+                  <label for="file" class="">Image :</label>
+                  
+                  <input type="file" class="w-[30%] mx-4 px-6 text-sm">
+                </li>
+                <li class="flex justify-center py-8">
+                  <label for="nom">Date de nessaince :</label>
+                  <input type="date" id="date" name="date" value="1999-07-22" min="1800-01-01" max="2007-12-31" class="bg-neutral-800 mx-4 px-6 rounded"/>
+                </li>
+
+                <li class="flex justify-center ">
+                  <div class=" [&>*]:px-6 [&>*]:py-2 [&>*]:mx-3 [&>*]:rounded ">
+
+                    <button  onClick="ToggleTag('musculation')" id="musculation" class="price bg-neutral-800">Musculation</button>
+                    <button  onClick="ToggleTag('cardio')" id="cardio" class="price bg-neutral-800">Cardio</button>
+                    <button  onClick="ToggleTag('session')" id="session" class="price bg-neutral-800">Session</button>
+                  </div>
+
+                </li>
+                <li class="flex justify-center py-8">
+                  <label for="nom">Payment :</label>
+                  <input type="text" name="payment" id="payment" value="" class="mx-4 bg-neutral-800 rounded-md px-6">
+                </li>
+
+
+                <li class="w-full absolute bottom-0">
+                  <div class="w-full grid grid-cols-2 [&>*]:py-4">
+
+                    <button class="bg-emerald-500">Ajouter</button>
+                    <button class="bg-red-500">Annuler</button>
+                  </div>
+                </li>
+              </ul>
+              
             </div>
           </div>
         </div>
@@ -223,7 +265,7 @@
               </div>
               <!-- Details -->
               <div
-                onclick="showClass()"
+                onclick="ToggleModal('toHide')"
                 id="showDetails"
                 class="flex items-center hover:bg-neutral-500 justify-center text-white"
               >
@@ -504,10 +546,21 @@
   }
 </style>
 <script>
-  function showClass() {
-      const Modal = document.getElementById('toHide')
+
+  function ToggleModal(ModalId) {
+    let Modal = document.getElementById(ModalId)
       Modal.classList.toggle( 'hidden');
+
       
   }
+  function ToggleTag(TagId) {
+    let Tag = document.getElementById(TagId)
+    Tag.classList.toggle( 'bg-emerald-600')
+  }
+  function paymentAutoFill(PaymentId) {
+    let price = document.getElementsByClassName('price')
+    
+  }
+ 
 </script>
 </html>
