@@ -162,15 +162,16 @@
                 <li class="flex justify-center ">
                   <div class=" [&>*]:px-6 [&>*]:py-2 [&>*]:mx-3 [&>*]:rounded ">
 
-                    <button  onClick="ToggleTag('musculation')" id="musculation" class="price bg-neutral-800">Musculation</button>
-                    <button  onClick="ToggleTag('cardio')" id="cardio" class="price bg-neutral-800">Cardio</button>
-                    <button  onClick="ToggleTag('session')" id="session" class="price bg-neutral-800">Session</button>
+                    <button onClick="ToggleTag('musculation', 3000)" id="musculation" class="price bg-neutral-800">Musculation</button>
+                    <button onClick="ToggleTag('cardio', 2000)" id="cardio" class="price bg-neutral-800">Cardio</button>
+                    <button onClick="ToggleTag('session', 300)" id="session" class="price bg-neutral-800">Session</button>                    
                   </div>
 
                 </li>
                 <li class="flex justify-center py-8">
-                  <label for="nom">Payment :</label>
-                  <input type="text" name="payment" id="payment" value="" class="mx-4 bg-neutral-800 rounded-md px-6">
+                  <label for="payment">Payment :</label>
+                  <input type="text" name="payment" id="PriceId" value="0" class="mx-4 bg-neutral-800 rounded-md px-6">
+                  <label for="DZ">DZ</label>
                 </li>
 
 
@@ -190,7 +191,7 @@
         <!-- Cards -->
 
         <div
-          class="w-full h-full grid grid-cols-[repeat(auto-fit,minmax(400px,1fr))] pt-12 pb-20  gap-10 overflow-y-scroll"
+          class="w-full h-full grid grid-cols-[repeat(auto-fit,minmax(360px,1fr))] pt-12 pb-20  gap-10 overflow-y-scroll"
         >
           <!-- Card One -->
           <div
@@ -336,7 +337,7 @@
             </div>
           </div>
           <!-- test ........................... -->
-          <!-- !-- Card One --> 
+          <!-- !-- Card Three --> 
           <div
             class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between"
           >
@@ -398,7 +399,7 @@
             </div>
           </div>
 
-          <!-- Card Two -->
+          <!-- Card Four -->
           <div
             class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between"
           >
@@ -458,9 +459,9 @@
               </div>
             </div>
          
-        </div>
-                  <!-- Card Two -->
-                  <div
+          </div>
+          <!-- Card Five -->
+          <div
                   class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between"
                 >
                   <div class="flex items-center px-4 pt-4">
@@ -518,7 +519,7 @@
                       <i class="fa-solid fa-circle-info"></i>
                     </div>
                   </div>
-              </div>
+          </div>
       </div>
     </div>
   </body>
@@ -546,21 +547,29 @@
   }
 </style>
 <script>
-
+  
   function ToggleModal(ModalId) {
     let Modal = document.getElementById(ModalId)
-      Modal.classList.toggle( 'hidden');
+    Modal.classList.toggle( 'hidden');
+  }
+  
+  
+  function ToggleTag(TagId, PriceId) {
+  let Tag = document.getElementById(TagId);
+  let Price = document.getElementById('PriceId');
 
-      
+  if (Tag.classList.contains('bg-emerald-600')) {
+    // If the button is currently toggled on, toggle it off and subtract the price
+    Tag.classList.remove('bg-emerald-600');
+    Price.value = parseFloat(Price.value) - parseFloat(PriceId);
+  } else {
+    // If the button is currently toggled off, toggle it on and add the price
+    Tag.classList.add('bg-emerald-600');
+    Price.value = parseFloat(Price.value) + parseFloat(PriceId);
   }
-  function ToggleTag(TagId) {
-    let Tag = document.getElementById(TagId)
-    Tag.classList.toggle( 'bg-emerald-600')
-  }
-  function paymentAutoFill(PaymentId) {
-    let price = document.getElementsByClassName('price')
-    
-  }
- 
+}
+
+  
+
 </script>
 </html>

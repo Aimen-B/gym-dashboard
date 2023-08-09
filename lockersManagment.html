@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salle de Sport</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="w-full h-screen bg-neutral-800">
+    <div class="relative flex w-full h-screen">
+      <!-- Header / Left Side -->
+      <header
+        class="h-screen py-12 w-[300px] bg-neutral-800 border-r-2 border-neutral-700 flex flex-col justify-between items-center"
+      >
+        <div class="flex flex-col gap-14 w-full px-8">
+          <!-- Name of Salle de sport -->
+          <div class="flex gap-4 items-center justify-center scale-[1.2]">
+            <i class="fa-solid fa-bolt fa-2xl text-emerald-200"></i>
+            <p class="text-white font-semibold">XYZ</p>
+          </div>
+
+          <!-- Identity of Manager / Admin -->
+          <div class="flex flex-col items-center">
+            <!-- Profile Picture -->
+            <div
+              class="rounded-full sm:h-[70px] sm:w-[70px] h-[100px] w-[100px] bg-red-500 overflow-hidden"
+            >
+              <img
+                class="object-fill"
+                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdigitalfirst.bfwpub.com%2Fassess_your_strengths_brb%2Fasset%2Fch07%2Fscreen-5-and-6e-arab-male-shutterstock_136789808_compressed.jpg&f=1&nofb=1&ipt=7102080e10103733c17db262c1063d0a9a43a29f7d6f5ab6999f39dfa861c63d&ipo=images"
+                alt=""
+              />
+            </div>
+            <!-- Name of Manager / Admin -->
+            <p class="text-white text-lg mt-4">Rachid Doe</p>
+            <!-- Edit Profile -->
+            <p
+              class="px-6 py-1 border-neutral-700 text-white border-2 mt-3 rounded-full"
+            >
+              Edit
+            </p>
+
+            <!-- Navigation -->
+            <nav class="flex flex-col w-full items-center mt-12 gap-4">
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-grip-vertical"></i>
+                <a href="#">Acceuil</a>
+              </div>
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-dumbbell"></i>
+                <a href="#">Musculation</a>
+              </div>
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-hand-fist"></i>
+                <a href="#">Martiaux</a>
+              </div>
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-gear"></i>
+                <a href="#">Parametres</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Deconnecter -->
+        <div class="px-8 w-full">
+          <div
+            class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+          >
+            <i class="fa-solid fa-power-off"></i>
+            <a href="#">Deconnecter</a>
+          </div>
+        </div>
+      </header>
+
+      <div
+        class="w-[calc(100%-300px)] bg-neutral-800 overflow-hidden h-screen px-10 pt-12"
+      >
+        <!-- Heading -->
+        <div class="flex w-full items-center justify-between pb-4">
+          <div>
+            <p class="text-white text-2xl font-light tracking-wide">
+              Locker Management
+            </p>
+          </div>
+        </div>
+
+        <!-- Locker Grid -->
+        <div class="w-[calc(100%-30px)] bg-neutral-800 overflow-hidden h-screen px-10 pt-12">
+            <!-- Heading -->
+            <div class="flex w-full items-center justify-between pb-4">
+              <div>
+                <p class="text-white text-2xl font-light tracking-wide">
+                  Locker Management
+                </p>
+              </div>
+            </div>
+      
+            <!-- Locker Grid Container with Scrolling -->
+            <div class="h-[calc(100vh-180px)] max-w-full overflow-x-hidden overflow-y-auto">
+              <div id="lockerGrid" class="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4">
+                <!-- Locker elements will be generated here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <script>
+        // lockers data
+          const lockerData = [
+            { id: 1, status: 'available' },
+            { id: 2, status: 'unavailable' },
+            { id: 3, status: 'available' },
+            { id: 4, status: 'maintenance' },
+            { id: 5, status: 'unavailable' },
+            { id: 6, status: 'available' },
+            { id: 7, status: 'maintenance' },
+            { id: 8, status: 'unavailable' },
+            { id: 9, status: 'available' },
+            { id: 10, status: 'maintenance' },
+            { id: 11, status: 'available' },
+            { id: 12, status: 'unavailable' },
+            { id: 13, status: 'available' },
+            { id: 14, status: 'maintenance' },
+            { id: 15, status: 'unavailable' },
+            { id: 16, status: 'available' },
+            { id: 17, status: 'maintenance' },
+            { id: 18, status: 'unavailable' },
+            { id: 19, status: 'available' },
+            { id: 20, status: 'maintenance' },
+            // Add more lockers here...
+          ];
+      
+          const lockerGrid = document.getElementById('lockerGrid');
+      
+          function generateLockerElement(locker) {
+            const lockerElement = document.createElement('div');
+            lockerElement.id = `locker-${locker.id}`;
+            lockerElement.className = `h-40 w-40 bg-green-500 relative`;
+      
+            const lockerNumber = document.createElement('span');
+            lockerNumber.className = 'absolute inset-0 flex justify-center items-center text-white text-lg';
+            lockerNumber.innerText = locker.id;
+      
+            const maintenanceButton = document.createElement('button');
+            maintenanceButton.className = 'absolute top-2 right-2 p-1 text-white rounded-full fa-solid fa-triangle-exclamation fa-xl';
+maintenanceButton.style.color = '#ffdd00';
+
+
+            
+            maintenanceButton.addEventListener('click', () => toggleMaintenance(locker.id));
+      
+            lockerElement.appendChild(lockerNumber);
+            lockerElement.appendChild(maintenanceButton);
+      
+            updateLockerStatus(locker.id, locker.status);
+            lockerGrid.appendChild(lockerElement);
+          }
+      
+          lockerData.forEach(locker => generateLockerElement(locker));
+      
+          function toggleMaintenance(lockerId) {
+            const locker = lockerData.find(locker => locker.id === lockerId);
+            if (locker) {
+              locker.status = locker.status === 'maintenance' ? 'available' : 'maintenance';
+              updateLockerStatus(lockerId, locker.status);
+            }
+          }
+      
+          function updateLockerStatus(lockerId, status) {
+  const lockerElement = document.getElementById(`locker-${lockerId}`);
+  if (lockerElement) {
+    lockerElement.classList.remove('bg-green-500', 'bg-blue-500', 'bg-red-500');
+    if (status === 'available') {
+      lockerElement.classList.add('bg-green-500');
+    } else if (status === 'unavailable') {
+
+      lockerElement.classList.add('bg-blue-500');
+    } else if (status === 'maintenance') {
+      lockerElement.classList.add('bg-red-500');
+    }
+  }
+}
+
+        </script>
+  </body>
+  <style>
+    /* ===== Scrollbar CSS ===== */
+    /* Firefox */
+    * {
+      scrollbar-width: auto;
+      scrollbar-color: #000000 #333333;
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    *::-webkit-scrollbar-track {
+      background: #333333;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: #000000;
+      border-radius: 10px;
+      border: 3px solid #333333;
+    }
+  </style>
+  <script></script>
+</html>
