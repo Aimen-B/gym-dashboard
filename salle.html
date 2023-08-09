@@ -145,20 +145,31 @@
             </div>
             <div id="ajouter" class="hidden absolute h-[80%] w-[60%] bg-neutral-700 right-[20%] z-50 rounded-xl pt-16 text-white text-xl">
               <ul class="h-[100%] relative">
-                <li class="flex justify-center py-8">
-                  <label for="nom">Nom :</label>
+                <li class="flex justify-center py-6">
+                  <label for="nom">Nom:</label>
                   <input type="text" name="nom" id="nom" class="mx-4 bg-neutral-800 rounded-md px-6">
+                  <label for="prenom">Prenom:</label>
+                  <input type="text" name="prenom" id="prenom" class="mx-4 bg-neutral-800 rounded-md px-6">
+                  
+                </li>
+                <!-- upload user info -->
+                
+                <li class="flex justify-center mb-4">
+                  <label for="pfp" class="">Image:</label>
+                  <input type="file" class="w-[30%] mx-4 px-6 text-sm">
+                </li >
+                <li class="flex justify-center ">
+                  <label for="birthCertifecate" class="mb-4">acte de naissance:</label>
+                  <input type="file" class="w-[30%] mx-4 px-6 text-sm">
                 </li>
                 <li class="flex justify-center ">
-                  <label for="file" class="">Image :</label>
-                  
+                  <label for="form" class="">form :</label>
                   <input type="file" class="w-[30%] mx-4 px-6 text-sm">
                 </li>
                 <li class="flex justify-center py-8">
-                  <label for="nom">Date de nessaince :</label>
+                  <label for="date">Date de nessaince :</label>
                   <input type="date" id="date" name="date" value="1999-07-22" min="1800-01-01" max="2007-12-31" class="bg-neutral-800 mx-4 px-6 rounded"/>
                 </li>
-
                 <li class="flex justify-center ">
                   <div class=" [&>*]:px-6 [&>*]:py-2 [&>*]:mx-3 [&>*]:rounded ">
 
@@ -208,14 +219,20 @@
                   alt=""
                 />
               </div>
+              <div class="text-white ml-3 text-lg capitalize ">
+              <!-- person code -->
+              <p class="border solic black text-center bg-neutral-800 rounded">112256</p>
               <!-- Name of person -->
-              <p class="text-white ml-3 text-lg capitalize font-semibold">
+              <p class="pt-2 font-semibold">
                 Mohamed Kadouri
               </p>
+              <p class="pt-2 ">last visit: 35min ago</p>
+            </div>
+              
             </div>
 
             <!-- Status + Locker -->
-            <div class="flex justify-between items-center px-4">
+            <div class="flex justify-between items-center p-4">
               <p class="p-2 text-white bg-neutral-600 rounded opacity-80">
                 Member
               </p>
