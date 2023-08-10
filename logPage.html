@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salle de Sport</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts.js"></script>
+  </head>
+  <body class="w-full h-screen bg-neutral-800">
+    <div class="relative flex w-full h-screen">
+      <!-- Header / Left Side -->
+      <header
+        class="h-screen py-12 w-[300px] bg-neutral-800 border-r-2 border-neutral-700 flex flex-col justify-between items-center"
+      >
+        <div class="flex flex-col gap-14 w-full px-8">
+          <!-- Name of Salle de sport -->
+          <div class="flex gap-4 items-center justify-center scale-[1.2]">
+            <i class="fa-solid fa-bolt fa-2xl text-emerald-200"></i>
+            <p class="text-white font-semibold">XYZ</p>
+          </div>
+
+          <!-- Identity of Manager / Admin -->
+          <div class="flex flex-col items-center">
+            <!-- Profile Picture -->
+            <div
+              class="rounded-full sm:h-[70px] sm:w-[70px] h-[100px] w-[100px] bg-red-500 overflow-hidden"
+            >
+              <img
+                class="object-fill"
+                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdigitalfirst.bfwpub.com%2Fassess_your_strengths_brb%2Fasset%2Fch07%2Fscreen-5-and-6e-arab-male-shutterstock_136789808_compressed.jpg&f=1&nofb=1&ipt=7102080e10103733c17db262c1063d0a9a43a29f7d6f5ab6999f39dfa861c63d&ipo=images"
+                alt=""
+              />
+            </div>
+            <!-- Name of Manager / Admin -->
+            <p class="text-white text-lg mt-4">Rachid Doe</p>
+            <!-- Edit Profile -->
+            <p
+              class="px-6 py-1 border-neutral-700 text-white border-2 mt-3 rounded-full"
+            >
+              Edit
+            </p>
+
+            <!-- Navigation -->
+            <nav class="flex flex-col w-full items-center mt-12 gap-4">
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-grip-vertical"></i>
+                <a href="#">Acceuil</a>
+              </div>
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-dumbbell"></i>
+                <a href="#">Musculation</a>
+              </div>
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-hand-fist"></i>
+                <a href="#">Martiaux</a>
+              </div>
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-gear"></i>
+                <a href="#">Parametres</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Deconnecter -->
+        <div class="px-8 w-full">
+          <div
+            class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+          >
+            <i class="fa-solid fa-power-off"></i>
+            <a href="#">Deconnecter</a>
+          </div>
+        </div>
+      </header>
+
+      <div
+        class="w-[calc(100%-300px)] bg-neutral-800 overflow-hidden h-screen px-10 pt-12"
+      >
+        <!-- Heading -->
+    <div class="flex w-full items-center justify-between pb-1">
+        <div>
+            <p class="text-white text-2xl font-light tracking-wide pb-2">
+                Admin log
+            </p>
+            
+        </div>
+    </div>
+    <div class="grid grid-cols-3 w-full border text-center [&>*]:border [&>*]:h-full [&>*]:w-full solid white h-[60px]">
+        <div class="flex h-full align-center text-white ">
+            <!-- Employee info -->
+            <div
+                class="rounded-full h-[50px] w-[50px] bg-red-500 m-1  overflow-hidden"
+            >
+                <img
+                class="object-cover h-full w-full"
+                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7e%2F97%2F3c%2F7e973c03ad5a2ff210a73aa7ae42c233.jpg&f=1&nofb=1&ipt=db46219cd2e048af0dae0f5fac6fe9fa82210ca93a79a03189acae3c4ae84403&ipo=images"
+                alt=""
+                />
+            </div>
+            <p class="h-full text-xl ">karim ahmed bouslata</p>
+
+        </div>
+        <div class="text-white ">
+            <p>Added 'zitouni amar' musculation  payment: 3000</p>
+        </div>
+        <div class="text-white ">10:32</div>
+
+
+    </div>
+
+        </div>
+  </body>
+  <style>
+    /* ===== Scrollbar CSS ===== */
+    /* Firefox */
+    * {
+      scrollbar-width: auto;
+      scrollbar-color: #000000 #333333;
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    *::-webkit-scrollbar-track {
+      background: #333333;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: #000000;
+      border-radius: 10px;
+      border: 3px solid #333333;
+    }
+  </style>
+  <script></script>
+</html>

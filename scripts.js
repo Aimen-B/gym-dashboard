@@ -58,8 +58,8 @@ const lockerData = [
   function toggleMaintenance(lockerId) {
     const locker = lockerData.find(locker => locker.id === lockerId);
     if (locker) {
-      locker.status = locker.status === 'maintenance' ? 'available' : 'maintenance';
-      updateLockerStatus(lockerId, locker.status);
+        locker.status = locker.status === 'maintenance' ? 'available' : 'maintenance';
+        updateLockerStatus(lockerId, locker.status);
     }
   }
 
