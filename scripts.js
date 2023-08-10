@@ -23,7 +23,7 @@ const lockerData = [
     { id: 19, status: 'available' },
     { id: 20, status: 'maintenance' },
     
-  ];
+];
 
   const lockerGrid = document.getElementById('lockerGrid');
 
@@ -35,7 +35,9 @@ const lockerData = [
     const lockerNumber = document.createElement('span');
     lockerNumber.className = 'absolute inset-0 flex justify-center items-center text-white text-lg';
     lockerNumber.innerText = locker.id;
-
+    
+    
+    
     const maintenanceButton = document.createElement('button');
     maintenanceButton.className = 'absolute top-2 right-2 p-1 text-white rounded-full fa-solid fa-triangle-exclamation fa-xl';
     maintenanceButton.style.color = '#ffdd00';
@@ -46,8 +48,8 @@ const lockerData = [
 
     lockerElement.appendChild(lockerNumber);
     lockerElement.appendChild(maintenanceButton);
-
     lockerGrid.appendChild(lockerElement);
+
     updateLockerStatus(locker.id, locker.status);
   }
 
@@ -63,12 +65,17 @@ const lockerData = [
 
   function updateLockerStatus(lockerId, status) {
     const lockerElement = document.getElementById(`locker-${lockerId}`);
+    const lockerUserId = document.createElement('span');
         if (lockerElement) {
-            lockerElement.classList.remove('bg-green-500', 'bg-blue-500', 'bg-red-500');
+            lockerElement.classList.remove('bg-green-500', 'bg-blue-700', 'bg-red-500');
         if (status === 'available') {
             lockerElement.classList.add('bg-green-500');
         } else if (status === 'unavailable') {
-            lockerElement.classList.add('bg-blue-500');
+            lockerElement.classList.add('bg-blue-700');
+            lockerUserId.className = 'absolute inset-0 top-0 flex justify-center text-white text-sm';
+            lockerUserId.innerText = 'ID: 222333444';
+            lockerElement.appendChild(lockerUserId);
+            
         } else if (status === 'maintenance') {
             lockerElement.classList.add('bg-red-500');
         }

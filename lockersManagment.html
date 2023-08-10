@@ -94,16 +94,23 @@
         class="w-[calc(100%-300px)] bg-neutral-800 overflow-hidden h-screen px-10 pt-12"
       >
         <!-- Heading -->
-        <div class="flex w-full items-center justify-between pb-4">
+        <div class="flex w-full items-center justify-between pb-1">
           <div>
-            <p class="text-white text-2xl font-light tracking-wide">
+            <p class="text-white text-2xl font-light tracking-wide pb-2">
               Locker Management
             </p>
+            <div class="flex gap-1 text-white text-sm ">
+                <div class="p-3 h2 bg-green-500">Available</div>
+                <div class="p-3 h2 bg-blue-700">Unvailable</div>
+                <div class="p-3 h2 bg-red-500">Maintenance</div>
+
+              <!-- ('bg-green-500', 'bg-blue-500', 'bg-red-500') -->
+            </div>
           </div>
         </div>
 
         <!-- Locker Grid -->
-        <div class="w-[calc(100%-30px)] bg-neutral-800 overflow-hidden h-screen px-10 pt-12">
+        <div class="w-[calc(100%-30px)] bg-neutral-800 overflow-hidden h-screen px-10 pt-6">
             <!-- Heading -->
             <div class="flex w-full items-center justify-between pb-4">
               <div>
