@@ -1,5 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
-   console.log('test')
+   
+  const ctx = document.getElementById('incomeChart');
+  
+  console.log('first')
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],
+      datasets: [{
+        label: 'amound in DA',
+        data: [3000, 5000, 1500, 8600, 0, 2300],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
 // lockers data
 const lockerData = [
     { id: 1, status: 'available' },
@@ -81,7 +103,5 @@ const lockerData = [
         }
     }
   }
-
-
 
 });
