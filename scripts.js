@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-   
   const ctx = document.getElementById('incomeChart');
   
   console.log('first')
