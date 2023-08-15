@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (status === "unavailable") {
         lockerElement.classList.add("bg-blue-700");
         lockerUserId.className =
-          "absolute inset-0 top-0 flex justify-center text-white text-sm";
+          "absolute inset-0 flex justify-center text-white text-sm h-[40px] bg-blue-800 p-2";
         lockerUserId.innerText = "ID: 222333444";
         lockerElement.appendChild(lockerUserId);
       } else if (status === "maintenance") {
