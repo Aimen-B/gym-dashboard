@@ -14,6 +14,7 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
   </head>
   <body class="w-full h-screen bg-neutral-800">
     <div class="relative flex w-full h-screen">
@@ -169,5 +170,36 @@
   }
 </style>
 
-<script src="../scripts.js"></script>
+
+<script>  
+  const ctx = document.getElementById("incomeChart");
+new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: [
+      "dimanche",
+      "lundi",
+      "mardi",
+      "mercredi",
+      "jeudi",
+      "vendredi",
+      "samedi",
+    ],
+    datasets: [
+      {
+        label: "amound in DA",
+        data: [3000, 5000, 1500, 8600, 0, 2300],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+})</script>
+
 </html>

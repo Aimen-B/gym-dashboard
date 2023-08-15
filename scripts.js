@@ -1,37 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
-   
-  const ctx = document.getElementById('incomeChart');
-  
-  console.log('first')
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("first");
 
-  new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: [
-        "dimanche",
-        "lundi",
-        "mardi",
-        "mercredi",
-        "jeudi",
-        "vendredi",
-        "samedi",
-      ],
-      datasets: [
-        {
-          label: "amound in DA",
-          data: [3000, 5000, 1500, 8600, 0, 2300],
-          borderWidth: 1,
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
   // lockers data
   const lockerData = [
     { id: 1, status: "available" },
@@ -55,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     { id: 19, status: "available" },
     { id: 20, status: "maintenance" },
   ];
+  console.log("second");
 
   const lockerGrid = document.getElementById("lockerGrid");
 
@@ -76,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
     maintenanceButton.addEventListener("click", () =>
       toggleMaintenance(locker.id)
     );
-    console.log("second");
     lockerElement.appendChild(lockerNumber);
     lockerElement.appendChild(maintenanceButton);
     lockerGrid.appendChild(lockerElement);
