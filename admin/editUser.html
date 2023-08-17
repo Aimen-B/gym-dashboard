@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salle de Sport</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="w-full h-screen bg-neutral-800">
+    <div class="relative flex w-full h-screen">
+    <!-- Header / Left Side -->
+    <header
+        class="h-screen py-12 w-[300px] bg-neutral-800 border-r-2 border-neutral-700 flex flex-col justify-between items-center"
+      >
+        <div class="flex flex-col gap-14 w-full px-8">
+          <!-- Name of Salle de sport -->
+          <div class="flex gap-4 items-center justify-center scale-[1.2]">
+            <i class="fa-solid fa-bolt fa-2xl text-emerald-200"></i>
+            <p class="text-white font-semibold">XYZ</p>
+          </div>
+
+          <!-- Identity of Manager / Admin -->
+          <div class="flex flex-col items-center">
+            <!-- Profile Picture -->
+            <div
+              class="rounded-full sm:h-[70px] sm:w-[70px] h-[100px] w-[100px] bg-red-500 overflow-hidden"
+            >
+              <img
+                class="object-fill"
+                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdigitalfirst.bfwpub.com%2Fassess_your_strengths_brb%2Fasset%2Fch07%2Fscreen-5-and-6e-arab-male-shutterstock_136789808_compressed.jpg&f=1&nofb=1&ipt=7102080e10103733c17db262c1063d0a9a43a29f7d6f5ab6999f39dfa861c63d&ipo=images"
+                alt=""
+              />
+            </div>
+            <!-- Name of Manager / Admin --> 
+            <p class="text-white  text-lg mt-4">Gym Admin name</p>
+            <!-- Edit Profile -->
+            <p
+              class="px-6 py-1 border-neutral-700 text-white border-2 mt-3 rounded-full"
+            >
+              Edit
+            </p>
+
+            <!-- Navigation -->
+            <nav class="flex flex-col w-full items-center mt-12 gap-4">
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-grip-vertical"></i>
+                <a href="#">Acceuil</a>
+              </div>
+              <div
+                class="p-4 w-full bg-neutral-700 hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-dumbbell"></i>
+                <a href="#">Musculation</a>
+              </div>
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-hand-fist"></i>
+                <a href="#">Martiaux</a>
+              </div>
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-gear"></i>
+                <a href="#">Parametres</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Deconnecter -->
+        <div class="px-8 w-full">
+          <div
+            class="p-4 hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+          >
+            <i class="fa-solid fa-power-off"></i>
+            <a href="#">Deconnecter</a>
+          </div>
+        </div>
+    </header>
+    <!-- page title -->
+    <div class="w-[calc(100%-300px)] text-white">
+
+        <div class="text-white text-3xl m-6">
+            <h1>Edit User</h1>
+            </div>
+            <!-- dashboard data -->
+            
+            <div class="text-xl">
+                <div class="edit-field flex gap-2 my-2">
+                    <label for="firstName" class="m-2">Nom:</label>
+                    <p id="oldFirstName" class="hover:bg-neutral-600 p-2">Mouhamed Ali</p>
+                    <input type="text" name="newFirstName" id="newFirstName" class="edit-input bg-neutral-800 border rounded hidden">
+                    <button class="edit-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+                <div class="edit-field flex gap-2 my-2">
+                    <label for="lastName" class="m-2">Prenom:</label>
+                    <p id="oldLastName" class="hover:bg-neutral-600 p-2">Smith</p>
+                    <input type="text" name="newLastName" id="newLastName" class="edit-input hidden bg-neutral-800 border rounded">
+                    <button class="edit-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+                
+                <div class="edit-field flex gap-2 my-2">
+                    <label for="adress" class="m-2">Adress:</label>
+                    <p id="oldAdress" class="hover:bg-neutral-600 p-2">annaba, el boni 214 alger...</p>
+                    <input type="text" name="newAdress" id="newAdress" class="edit-input hidden bg-neutral-800 border rounded">
+                    <button class="edit-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+                
+                <div class="edit-field flex gap-2 my-2">
+                    <label for="age" class="m-2">Age:</label>
+                    <p id="oldAge" class="hover:bg-neutral-600 p-2">25</p>
+                    <input type="text" name="newAge" id="newAge" class="edit-input hidden bg-neutral-800 border rounded">
+                    <button class="edit-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+                
+                <div class="edit-field flex gap-2 my-2">
+                    <label for="group" class="m-2">Group:</label>
+                    <p id="oldGroup" class="hover:bg-neutral-600 p-2">6</p>
+                    <input type="text" name="newGroup" id="newGroup" class="edit-input hidden bg-neutral-800 border rounded">
+                    <button class="edit-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+                
+                <div class="edit-field flex gap-2 my-2">
+                    <label for="telephon" class="m-2">Telephon:</label>
+                    <p id="oldTelephon" class="hover:bg-neutral-600 p-2">07854451</p>
+                    <input type="text" name="newTelephon" id="newTelephon" class="edit-input hidden bg-neutral-800 border rounded">
+                    <button class="edit-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+                
+                <div class="edit-field flex gap-2 my-2">
+                    <label for="position" class="m-2">Position:</label>
+                    <p id="oldPosition" class="hover:bg-neutral-600 p-2">member</p>
+                    <input type="text" name="newPosition" id="newPosition" class="edit-input hidden bg-neutral-800 border rounded">
+                    <button class="edit-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+                
+                <div class="edit-field flex gap-2 my-2">
+                    <label for="pois" class="m-2">Poids:</label>
+                    <p id="oldPoids" class="hover:bg-neutral-600 p-2">87 kg</p>
+                    <input type="text" name="newPoids" id="newPoids" class="edit-input hidden bg-neutral-800 border rounded">
+                    <button class="edit-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+                <!-- Add more edit-field blocks for other fields -->
+            </div>
+            <div class="flex  [&>*]:px-16 [&>*]:py-1">
+                <button class="bg-emerald-500">Save</button>
+                <button class="bg-red-500">Cancel</button>
+            </div>
+                
+        </div>
+
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const editFieldContainers = document.querySelectorAll('.edit-field');
+
+        editFieldContainers.forEach(container => {
+            const oldField = container.querySelector('p');
+            const newField = container.querySelector('input');
+            const editButton = container.querySelector('.edit-button');
+
+            editButton.addEventListener('click', function () {
+                oldField.style.display = 'none';
+                newField.style.display = 'inline-block';
+                newField.value = oldField.textContent;
+                editButton.style.display = 'none';
+            });
+
+            newField.addEventListener('blur', function () {
+                oldField.textContent = newField.value;
+                oldField.style.display = 'inline-block';
+                newField.style.display = 'none';
+                editButton.style.display = 'inline-block';
+            });
+        });
+    });
+</script>
+</html>
