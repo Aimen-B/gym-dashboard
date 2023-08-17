@@ -12,14 +12,19 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../date-range/lightpick.css" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+    <script src="../date-range/lightpick.js"></script>
   </head>
-  <body class="w-full h-screen bg-neutral-800"> 
+  <body class="w-full h-screen bg-neutral-800">
     <div class="relative flex w-full h-screen">
-    <!-- Header / Left Side -->
-    <header
+      <!-- Header / Left Side -->
+      <header
         class="h-screen py-12 w-[300px] bg-neutral-800 border-r-2 border-neutral-700 flex flex-col justify-between items-center"
       >
         <div class="flex flex-col gap-14 w-full px-8">
@@ -41,8 +46,8 @@
                 alt=""
               />
             </div>
-            <!-- Name of Manager / Admin --> 
-            <p class="text-white  text-lg mt-4">Gym Admin name</p>
+            <!-- Name of Manager / Admin -->
+            <p class="text-white text-lg mt-4">Gym Admin name</p>
             <!-- Edit Profile -->
             <p
               class="px-6 py-1 border-neutral-700 text-white border-2 mt-3 rounded-full"
@@ -56,10 +61,10 @@
                 class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
               >
                 <i class="fa-solid fa-grip-vertical"></i>
-                <a href="#">Acceuil</a>
+                <a href="acceuilAdmin.html">Acceuil</a>
               </div>
               <div
-                class="p-4 w-full bg-neutral-700 hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+                class="p-4 w-full bg-neutral-800 hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
               >
                 <i class="fa-solid fa-dumbbell"></i>
                 <a href="#">Musculation</a>
@@ -89,132 +94,179 @@
             <a href="#">Deconnecter</a>
           </div>
         </div>
-    </header>
-    <!-- page title -->
-    <div class="w-[calc(100%-300px)] text-white">
+      </header>
+      <!-- page title -->
+      <div class="w-[calc(100%-300px)] text-white">
+        <div class="text-white text-3xl m-6 flex justify-between">
+          <h1>Acceuil / Abonne</h1>
+          <input
+            class="bg-neutral-600 rounded-xl text-sm"
+            type="text"
+            id="datepicker"
+          />
+        </div>
+        <!-- dashboard data -->
 
-        <div class="text-white text-3xl m-6">
-            <h1>Acceuil / income</h1>
+        <div
+          class="m-6 grid grid-cols-6 gap-5 [&>*]:border [&>*]:border-neutral-400/50 [&>*]:rounded-xl [&>*]:p-4 text-xl"
+        >
+          <!-- numbers -->
+          <div class="">
+            <div class="flex justify-between">
+              <p class="text-sm text-neutral-200">Total gym subscribers</p>
+              <i
+                class="fa-solid fa-cash-register fa-2xs mt-2 text-neutral-400"
+              ></i>
             </div>
-            <!-- dashboard data -->
-            
-            <div class="m-6 grid grid-cols-6 gap-5 [&>*]:border [&>*]:border-neutral-400/50 [&>*]:rounded-xl [&>*]:p-4 text-xl ">
-                <!-- numbers -->
-                <div class="">
-                  <div class="flex justify-between">
-                    <p class="text-sm text-neutral-200">Total gym subscribers</p>
-                    <i class="fa-solid fa-cash-register fa-2xs mt-2 text-neutral-400" ></i>
-                  </div>
-                    <p class="font-bold ">62</p>
-                </div>
-                <div >
-                  <div class="flex justify-between">
+            <p class="font-bold">62</p>
+          </div>
+          <div>
+            <div class="flex justify-between">
+              <p class="text-sm text-neutral-200">New gym subscribers</p>
+              <i
+                class="fa-solid fa-calendar-days fa-xs text-neutral-400 mt-2"
+              ></i>
+            </div>
+            <p class="font-bold">12</p>
+          </div>
+          <div>
+            <div class="flex justify-between">
+              <p class="text-sm text-neutral-200">Gym trainers</p>
+              <i class="fa-solid fa-person fa-xs text-neutral-400 mt-2"></i>
+            </div>
+            <p class="font-bold">5</p>
+          </div>
+          <div>
+            <div class="flex justify-between">
+              <p class="text-sm text-neutral-200">clubs</p>
+              <i class="fa-solid fa-dumbbell fa-xs text-neutral-400 mt-2"></i>
+            </div>
 
-                    <p class="text-sm text-neutral-200">New gym subscribers</p>
-                    <i class="fa-solid fa-calendar-days fa-xs text-neutral-400 mt-2" ></i>
-                  </div>
-                    <p class="font-bold">12</p>
-                </div>
-                <div >
-                  <div class="flex justify-between">
+            <p class="font-bold">9</p>
+          </div>
+          <div>
+            <div class="flex justify-between">
+              <p class="text-sm text-neutral-200">Club subscribers</p>
+              <i class="fa-solid fa-dumbbell fa-xs text-neutral-400 mt-2"></i>
+            </div>
 
-                    <p class="text-sm text-neutral-200">Gym traners</p>
-                    <i class="fa-solid fa-person fa-xs text-neutral-400 mt-2"></i>
-                  
-                  </div>
-                    <p class="font-bold">5</p>
-                </div>
-                <div >
-                  <div class="flex justify-between">
-                  <p class="text-sm text-neutral-200">clubs</p>
-                  <i class="fa-solid fa-dumbbell fa-xs text-neutral-400 mt-2"></i>
-                  </div>
-                    
-                    <p class="font-bold">9</p>
-                </div>
-                <div >
-                    <div class="flex justify-between">
-                    <p class="text-sm text-neutral-200">Club subscribers</p>
-                    <i class="fa-solid fa-dumbbell fa-xs text-neutral-400 mt-2"></i>
-                    </div>
-                    
-                        <p class="font-bold">82</p>
-                  </div>
-                  <div >
-                    <div class="flex justify-between">
-                    <p class="text-sm text-neutral-200">new club subscribers</p>
-                    <i class="fa-solid fa-dumbbell fa-xs text-neutral-400 mt-2"></i>
-                    </div>
-                      
-                      <p class="font-bold">21</p>
-                    </div>
-                    <canvas class=" w-[40vw] " id="incomeChart"></canvas>
-                <!-- Income Chart -->
-                
-              </div>
-              <div class="m-6 grid grid-cols-1 gap-5 [&>*]:border [&>*]:border-neutral-400/50 upercase [&>*]:rounded-xl [&>*]:p-4 text-center text-2xl ">
+            <p class="font-bold">82</p>
+          </div>
+          <div>
+            <div class="flex justify-between">
+              <p class="text-sm text-neutral-200">new club subscribers</p>
+              <i class="fa-solid fa-dumbbell fa-xs text-neutral-400 mt-2"></i>
+            </div>
+
+            <p class="font-bold">21</p>
+          </div>
+          <!-- subs Chart -->
+          <canvas class="w-[40vw]" id="daysChart"></canvas>
+        </div>
+        <canvas class="w-[40vw]" id="monthsChart"></canvas>
+        <!-- <div class="m-6 grid grid-cols-1 gap-5 [&>*]:border [&>*]:border-neutral-400/50 upercase [&>*]:rounded-xl [&>*]:p-4 text-center text-2xl ">
                   <div class="">
                       <p class="text-sm text-neutral-200">Month income</p>
                       <p class="font-bold">965000 DA</p>
-                  </div>
-            </div>
-        </div>
-
+                  </div> -->
+      </div>
+    </div>
   </body>
-<style>
-  /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #000000 #333333;
-  }
+  <style>
+    /* ===== Scrollbar CSS ===== */
+    /* Firefox */
+    * {
+      scrollbar-width: auto;
+      scrollbar-color: #000000 #333333;
+    }
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 2px;
-  }
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+      width: 2px;
+    }
 
-  *::-webkit-scrollbar-track {
-    background: #333333;
-  }
+    *::-webkit-scrollbar-track {
+      background: #333333;
+    }
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #000000;
-    border-radius: 10px;
-    border: 3px solid #333333;
-  }
-</style>
+    *::-webkit-scrollbar-thumb {
+      background-color: #000000;
+      border-radius: 10px;
+      border: 3px solid #333333;
+    }
+  </style>
 
-
-<script>  
-  const ctx = document.getElementById("incomeChart");
-new Chart(ctx, {
-  type: "bar",
-  data: {
-    labels: [
-      "dimanche",
-      "lundi",
-      "mardi",
-      "mercredi",
-      "jeudi",
-      "vendredi",
-      "samedi",
-    ],
-    datasets: [
-      {
-        label: "amound in DA",
-        data: [3000, 5000, 1500, 8600, 0, 2300],
-        borderWidth: 1,
+  <script>
+    const daysChart = document.getElementById("daysChart");
+    new Chart(daysChart, {
+      type: "bar",
+      data: {
+        labels: [
+          "dimanche",
+          "lundi",
+          "mardi",
+          "mercredi",
+          "jeudi",
+          "vendredi",
+          "samedi",
+        ],
+        datasets: [
+          {
+            label: "Last week subscribers",
+            data: [41, 42, 40, 39, 43, 48],
+            borderWidth: 1,
+          },
+          {
+            label: "Current week subscribers",
+            data: [50, 51, 55, 55, 58, 63],
+            borderWidth: 1,
+          },
+        ],
       },
-    ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
       },
-    },
-  },
-})</script>
+    });
 
+    const monthsChart = document.getElementById("monthsChart");
+    new Chart(monthsChart, {
+      type: "bar",
+      data: {
+        labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+        datasets: [
+          {
+            label: "Last year subscribers",
+            data: [50, 51, 54, 54, 57, 62, 49, 51, 56, 56, 59, 62, 50],
+            borderWidth: 1,
+          },
+          {
+            label: "Current year subscribers",
+            data: [50, 51, 55, 55, 58, 63, 50, 51, 55, 55, 58, 63, 50],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+    var picker = new Lightpick({
+      field: document.getElementById("datepicker"),
+      singleDate: false,
+      onSelect: function (start, end) {
+        var str = "";
+        str += start ? start.format("Do MMMM YYYY") + " to " : "";
+        str += end ? end.format("Do MMMM YYYY") : "...";
+        document.getElementById("result-2").innerHTML = str;
+      },
+    });
+  </script>
 </html>
