@@ -99,11 +99,20 @@
       <div class="w-[calc(100%-300px)] text-white">
         <div class="text-white text-3xl m-6 flex justify-between">
           <h1>Acceuil / Abonne</h1>
-          <input
-            class="bg-neutral-600 rounded-xl text-sm"
-            type="text"
-            id="datepicker"
-          />
+          <div class="">
+            <input
+              class="bg-neutral-600 rounded-xl text-sm text-center py-1 px-2"
+              type="text"
+              id="datepicker"
+              placeholder="Date"
+            />
+            <button
+              onclick="changeDate()"
+              class="text-sm font-bold bg-neutral-600 px-3 rounded"
+            >
+              Submit
+            </button>
+          </div>
         </div>
         <!-- dashboard data -->
 
@@ -258,6 +267,7 @@
         },
       },
     });
+
     var picker = new Lightpick({
       field: document.getElementById("datepicker"),
       singleDate: false,
@@ -265,8 +275,69 @@
         var str = "";
         str += start ? start.format("Do MMMM YYYY") + " to " : "";
         str += end ? end.format("Do MMMM YYYY") : "...";
-        document.getElementById("result-2").innerHTML = str;
+        document.getElementById("datepicker").innerHTML = str;
+        console.log(document.getElementById("datepicker").value);
       },
     });
+    function changeDate() {
+      const dateRange = document.getElementById("datepicker").value;
+
+      // Split the date range into start and end dates
+      const [startDateStr, endDateStr] = dateRange.split(" - ");
+
+      // Parse start and end dates
+      const startDateParts = startDateStr.split("/");
+      const endDateParts = endDateStr.split("/");
+
+      if (startDateParts.length !== 3 || endDateParts.length !== 3) {
+        alert(
+          "Invalid date range format. Please use the format DD/MM/YYYY - DD/MM/YYYY."
+        );
+        return;
+      }
+
+      const startDay = parseInt(startDateParts[0]);
+      const startMonth = parseInt(startDateParts[1]) - 1; // Months are 0-based in Date object
+      const startYear = parseInt(startDateParts[2]);
+
+      const endDay = parseInt(endDateParts[0]);
+      const endMonth = parseInt(endDateParts[1]) - 1;
+      const endYear = parseInt(endDateParts[2]);
+
+      if (
+        isNaN(startDay) ||
+        isNaN(startMonth) ||
+        isNaN(startYear) ||
+        isNaN(endDay) ||
+        isNaN(endMonth) ||
+        isNaN(endYear)
+      ) {
+        alert(
+          "Invalid date values. Please enter valid numbers for day, month, and year."
+        );
+        return;
+      }
+
+      const currentURL = new URL(window.location.href);
+
+      // Format the start date as YYYY-MM-DD
+      const formattedStartDate = new Date(startYear, startMonth, startDay)
+        .toISOString()
+        .slice(0, 10);
+
+      // Set or replace the 'start_date' parameter
+      currentURL.searchParams.set("start_date", formattedStartDate);
+
+      // Format the end date as YYYY-MM-DD
+      const formattedEndDate = new Date(endYear, endMonth, endDay)
+        .toISOString()
+        .slice(0, 10);
+
+      // Set or replace the 'end_date' parameter
+      currentURL.searchParams.set("end_date", formattedEndDate);
+
+      // Update the URL without reloading the page
+      history.replaceState(null, null, currentURL.toString());
+    }
   </script>
 </html>
