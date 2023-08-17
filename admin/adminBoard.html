@@ -188,6 +188,43 @@
                     class="bg-neutral-800 mx-4 px-6 rounded"
                   />
                 </li>
+                <li class="flex justify-center">
+                  <div class="[&>*]:px-6 [&>*]:py-2 [&>*]:mx-3 [&>*]:rounded">
+                    <button
+                      onClick="ToggleTag('musculation', 3000)"
+                      id="musculation"
+                      class="price bg-neutral-800"
+                    >
+                      Musculation
+                    </button>
+                    <button
+                      onClick="ToggleTag('cardio', 2000)"
+                      id="cardio"
+                      class="price bg-neutral-800"
+                    >
+                      Cardio
+                    </button>
+                    <button
+                      onClick="ToggleTag('session', 300)"
+                      id="session"
+                      class="price bg-neutral-800"
+                    >
+                      Session
+                    </button>
+                  </div>
+                </li>
+                <li class="flex justify-center py-8">
+                  <label for="payment">Payment :</label>
+                  <input
+                    type="text"
+                    name="payment"
+                    id="PriceId"
+                    value="0"
+                    class="mx-4 bg-neutral-800 rounded-md px-6"
+                  />
+                  <label for="DZ">DZ</label>
+                </li>
+
                 <li class="w-full absolute bottom-0">
                   <div class="w-full grid grid-cols-2 [&>*]:py-4">
                     <button class="bg-emerald-500">Ajouter</button>
@@ -581,21 +618,6 @@
     function ToggleModal(ModalId) {
       let Modal = document.getElementById(ModalId);
       Modal.classList.toggle("hidden");
-    }
-
-    function ToggleTag(TagId, PriceId) {
-      let Tag = document.getElementById(TagId);
-      let Price = document.getElementById("PriceId");
-
-      if (Tag.classList.contains("bg-emerald-600")) {
-        // If the button is currently toggled on, toggle it off and subtract the price
-        Tag.classList.remove("bg-emerald-600");
-        Price.value = parseFloat(Price.value) - parseFloat(PriceId);
-      } else {
-        // If the button is currently toggled off, toggle it on and add the price
-        Tag.classList.add("bg-emerald-600");
-        Price.value = parseFloat(Price.value) + parseFloat(PriceId);
-      }
     }
   </script>
 </html>
