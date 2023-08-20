@@ -167,6 +167,7 @@
                 <li class="flex justify-center ">
                   <label for="form" class="">form :</label>
                   <input type="file" class="w-[30%] mx-4 px-6 text-sm">
+                  
                 </li>
                 <li class="flex justify-center py-8">
                   <label for="date">Date de nessaince :</label>
@@ -247,6 +248,7 @@
             <li class="flex justify-center ">
               <label for="form" class="">form :</label>
               <input type="file" class="w-[30%] mx-4 px-6 text-sm">
+              <a href="clubForm.pdf" class="text-black bg-neutral-400 px-2 rounded"> print Form</a>
             </li>
             <li class="flex justify-center py-8">
               <label for="date">Date de nessaince :</label>
@@ -374,6 +376,7 @@
                 <p>Date de registrement :</p>
                 <p>11/11/2023</p>
               </div>
+              <a href="" class=" px-2 rounded border bg-neutral-400">Print</a>
             </div>
             <!-- Les bouttons d'action -->
             <div  class="w-full bg-neutral-600 h-[60px] grid grid-cols-3">
@@ -384,8 +387,9 @@
                 <i class="fa-solid fa-pen-to-square"></i>
               </div>
 
-              <!-- Supprimer -->
-              <div
+              <!-- Exit -->
+              <div 
+                onclick="exitConfirm()"
                 class="flex items-center hover:bg-neutral-500 justify-center text-white border-r-2 border-neutral-500"
               >
                 <i class="fa-solid fa-trash"></i>
@@ -586,7 +590,7 @@
             </div>
          
           </div>
-          <!-- Card Five -->
+          <!-- Card six new user -->
           <div
                   class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between"
                 >
@@ -597,7 +601,7 @@
                     >
                       <img
                         class="object-cover h-full w-full"
-                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic6.businessinsider.com%2Fimage%2F56a8f50ddd089553198b4731-1200%2Fditch-the-smirk-when-it-comes-to-profile-pictures-only-2-of-the-top-ranked-profiles-on-okcupid-featured-people-hiding-their-smiles-instead-try-smiling-with-your-teeth.jpg&f=1&nofb=1&ipt=423933a17ee75f1c5b31981bc29e89c3008847d08286e044fe31dad2dcab3404&ipo=images"
+                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fdefault-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg&f=1&nofb=1&ipt=ba3740f7d10a6926f2c5bfea0c030a7d4e442caf0bb21df3fb9f60c4cc0b7d9f&ipo=images"
                         alt=""
                       />
                     </div>
@@ -621,7 +625,7 @@
                       300DA
                     </p>
       
-                    <p class="bg-red-200 p-2 px-4 rounded">--</p>
+                    <p class="bg-emerald-200 p-2 px-4 rounded">6</p>
                   </div>
       
                   <!-- Les bouttons d'action -->
@@ -646,9 +650,112 @@
                     </div>
                   </div>
           </div>
+          <div
+            class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between"
+          >
+            <div class="flex items-center p-4 pt-4">
+              <!-- Picture of person -->
+              <div
+                class="rounded-full h-[85px] w-[85px] bg-red-500 overflow-hidden"
+              >
+                <img
+                  class="object-cover h-full w-full"
+                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7e%2F97%2F3c%2F7e973c03ad5a2ff210a73aa7ae42c233.jpg&f=1&nofb=1&ipt=db46219cd2e048af0dae0f5fac6fe9fa82210ca93a79a03189acae3c4ae84403&ipo=images"
+                  alt=""
+                />
+              </div>
+              <div class="text-white ml-3 text-lg capitalize ">
+              <!-- person code -->
+              <div class="flex w-full justify-start ">
+              <p class=" black text-center text-sm bg-neutral-800 p-1 px-3 rounded">112256</p>
+            </div>
+              <!-- Name of person -->
+              <p class="pt-2 font-semibold">
+                Mohamed Kadouri
+              </p>
+              <p class="pt-2 text-sm">last visit : 35min ago</p>
+            </div>
+              
+            </div>
+
+            <!-- Status + Locker -->
+            <div class="flex justify-between items-center p-4">
+              <p class="p-2 text-white bg-neutral-600 rounded opacity-80">
+                Member
+              </p>
+
+              <p class="p-2 px-4 text-white bg-neutral-600 rounded opacity-80">
+                Lifting
+              </p>
+
+              <p class="p-2 px-4 text-white bg-neutral-600 rounded opacity-80">
+                Abonnement
+              </p>
+
+              <p class="bg-emerald-200 p-2 px-4 rounded">12</p>
+            </div>
+            <!-- detail extended-->
+            <div id="toHide" class="hidden z-50 absolute bg-neutral-600 p-8 top-[10%] left-[30%] text-xl rounded"> 
+              <!-- absolute bg-neutral-600 p-8 top-[10%] left-[30%] text-xl rounded -->
+              <div class="text-white text-center grid grid-cols-2 [&>*]:border [&>*]:solid [&>*]:px-16 [&>*]:py-2">
+                <p>Abonnment :</p>
+                <p>2 mois</p>
+              </div>
+              <div class="text-white text-center grid grid-cols-2 [&>*]:border [&>*]:solid [&>*]:px-16 [&>*]:py-2">
+                <p>Date de nessaince :</p>
+                <p>09/10/1994</p>
+              </div>
+              <div class="text-white text-center grid grid-cols-2 [&>*]:border [&>*]:solid [&>*]:px-16 [&>*]:py-2">
+                <p>sex :</p>
+                <p>Homme</p>
+              </div>
+              <div class="text-white text-center grid grid-cols-2 [&>*]:border [&>*]:solid [&>*]:px-16 [&>*]:py-2">
+                <p>Date de registrement :</p>
+                <p>11/11/2023</p>
+              </div>
+              <a href="" class=" px-2 rounded border bg-neutral-400">Print</a>
+            </div>
+            <!-- Les bouttons d'action -->
+            <div  class="w-full bg-neutral-600 h-[60px] grid grid-cols-3">
+              <!-- Editer -->
+              <div
+                class="flex items-center hover:bg-neutral-500 justify-center text-white border-r-2 border-neutral-500"
+              >
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+
+              <!-- Exit -->
+              <div 
+                onclick="exitConfirm()"
+                class="flex items-center hover:bg-neutral-500 justify-center text-white border-r-2 border-neutral-500"
+              >
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <!-- Details -->
+              <div
+                onclick="ToggleModal('toHide')"
+                id="showDetails"
+                class="flex items-center hover:bg-neutral-500 justify-center text-white"
+              >
+                <i class="fa-solid fa-circle-info"></i>
+              </div>
+
+            </div>
+          </div>
+
       </div>
     </div>
   </body>
+  <script>
+      function exitConfirm() {
+        
+  if (confirm("are you sure!")) {
+    window.location = "salle.html";
+  } else {
+    
+  }
+}
+  </script>
 <style>
   /* ===== Scrollbar CSS ===== */
   /* Firefox */

@@ -144,6 +144,7 @@
             >
               Ajouter un engistrement
             </div>
+            
             <div id="ajouter" class="hidden absolute h-[80%] w-[60%] bg-neutral-700 right-[20%] z-50 rounded-xl pt-16 text-white text-xl">
               <ul class="h-[100%] relative">
                 <li class="flex justify-center py-6">
@@ -198,6 +199,109 @@
               
             </div>
           </div>
+          <div
+              onclick="ToggleModal('ajouterClub')"
+              class="text-white p-4 bg-blue-800 rounded-xl hover:opacity-90 hover:cursor-pointer"
+            >
+              Ajouter club
+        </div>
+        <div id="ajouterClub" class="hidden absolute h-[80%] w-[70%] top-16 bg-neutral-700 right-[20%] z-50 rounded-xl pt-16 text-white text-xl">
+          <ul class="h-[100%] relative">
+            <li class="flex justify-center py-6">
+
+              <label for="prenom">Prenom:</label>
+              <input type="text" name="prenom" id="prenom" class="mx-4 bg-neutral-800 rounded-md px-6">
+              
+              <label for="nom">Nom:</label>
+              <input type="text" name="nom" id="nom" class="mx-4 bg-neutral-800 rounded-md px-6">
+              
+              <select name="sex" id="sex" class="bg-neutral-800">
+                <option value="male">M</option>
+                <option value="female">F</option>
+              </select>
+              
+            </li>
+            <li class="flex justify-center py-4">
+            <label for="telephone">Téléphone :</label>
+            <input type="number" name="telephone" id="telephone" class="bg-neutral-800 rounded mx-1">
+            
+            <label for="club">Club :</label>
+            <input type="text" name="club" id="club" class="bg-neutral-800 rounded mx-1">
+            
+            <label for="group">Group :</label>
+            <input type="text" name="group" id="group" class="bg-neutral-800 rounded mx-1">
+            
+            </li>
+            <!-- upload user info -->
+            
+            <li class="flex justify-center mb-4">
+              <label for="pfp" class="">Image:</label>
+              <input type="file" class="w-[30%] mx-4 px-6 text-sm">
+            </li >
+            <li class="flex justify-center ">
+              <label for="birthCertifecate" class="mb-4">acte de naissance:</label>
+              <input type="file" class="w-[30%] mx-4 px-6 text-sm">
+            </li>
+            <li class="flex justify-center ">
+              <label for="form" class="">form :</label>
+              <input type="file" class="w-[30%] mx-4 px-6 text-sm">
+              <a href="clubForm.pdf" class="text-black bg-neutral-400 px-2 rounded"> print Form</a>
+            </li>
+            <li class="flex justify-center py-8">
+              <label for="date">Date de nessaince :</label>
+              <input type="date" id="date" name="date" value="1999-07-22" min="1800-01-01" max="2007-12-31" class="bg-neutral-800 mx-4 px-6 rounded"/>
+            
+              <label for="adress">Adress :</label>
+              <input type="text" id="adress" name="adress" class="bg-neutral-800 mx-4 px-6 rounded"/>
+              
+              <label for="at">a :</label>
+              <input type="text" name="at" id="at" class="bg-neutral-800 mx-4  rounded"/>
+            </li>
+            
+            <li class="flex justify-center mb-4">
+            <label for="height">Height :</label>
+            <input type="number " class="bg-neutral-800 mx-4  rounded">
+            
+            <label for="weight">Weight :</label>
+            <input type="number " class="bg-neutral-800 mx-4  rounded">
+            
+            <label for="blood">Blood :</label>
+            <input type="number " class="bg-neutral-800 mx-4  rounded">
+            
+            
+            
+            </li>
+            <li class="flex justify-center ">
+              <div class=" [&>*]:px-6 [&>*]:py-2 [&>*]:mx-3 [&>*]:rounded ">
+
+                <button onClick="ToggleTag('kongFu', 3000)" id="kongFu" class="price bg-neutral-800">KongFu shou</button>
+                <button onClick="ToggleTag('kickBoxing', 2000)" id="kickBoxing" class="price bg-neutral-800">Kick Boxing</button>
+                <button onClick="ToggleTag('jujutsu', 3000)" id="jujutsu" class="price bg-neutral-800">Jujutsu</button>
+                <button onClick="ToggleTag('mma', 3000)" id="mma" class="price bg-neutral-800">MMA</button>
+              </div>
+
+            </li>
+            <li class="flex justify-center py-8">
+              <label for="payment">Payment :</label>
+              <input type="text" name="payment" id="PriceId" value="0" class="mx-2 bg-neutral-800 rounded-md px-6">
+              <label for="DZ">DZ</label>
+              
+              <label for="abonnment" class="ml-16 mx-2">Mois :</label>
+              <input type="number" name="abonnment" id="abonnment" class="bg-neutral-800 rounded">
+              
+            </li>
+
+
+            <li class="w-full absolute bottom-0">
+              <div class="w-full grid grid-cols-2 [&>*]:py-4">
+
+                <button class="bg-emerald-500">Ajouter</button>
+                <button class="bg-red-500">Annuler</button>
+              </div>
+            </li>
+          </ul>
+          
+        </div>
         </div>
 
         <!-- Cards -->
@@ -278,8 +382,9 @@
               >
                 <i class="fa-solid fa-pen-to-square"></i>
               </div>
-              <!-- Supprimer -->
+              <!-- Exit -->
               <div
+              onclick="exitConfirm()"
                 class="flex items-center hover:bg-neutral-500 justify-center text-white border-r-2 border-neutral-500"
               >
                 <i class="fa-solid fa-trash"></i>
@@ -540,9 +645,22 @@
                     </div>
                   </div>
           </div>
+          
       </div>
+      
     </div>
   </body>
+  
+  <script>
+    function exitConfirm() {
+      
+if (confirm("are you sure!")) {
+  window.location = "salle.html";
+} else {
+  
+}
+}
+</script>
 <style>
   /* ===== Scrollbar CSS ===== */
   /* Firefox */

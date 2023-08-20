@@ -116,7 +116,7 @@
                     <p>21</p>
                 </div>
                 <!-- Income Chart -->
-                <canvas class=" w-[50vw]" id="incomeChart"></canvas>
+                <canvas class="" id="incomeChart"></canvas>
 
             </div>
             <div class="m-6 grid grid-cols-3 gap-5 [&>*]:border [&>*]:border-neutral-500 upercase [&>*]:rounded-xl [&>*]:p-4 text-center text-2xl ">
@@ -129,7 +129,7 @@
                 <p>36</p>
               </div>
               <div class="">
-                <p class="text-sm text-neutral-200">Month income</p>
+                <p class="text-sm text-neutral-200">Income</p>
                 <p>5000 DA</p>
               </div>
           </div>
@@ -159,5 +159,35 @@
     border: 3px solid #333333;
   }
 </style>
+<script>  
+  const ctx = document.getElementById("incomeChart");
+new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: [
+      "dimanche",
+      "lundi",
+      "mardi",
+      "mercredi",
+      "jeudi",
+      "vendredi",
+      "samedi",
+    ],
+    datasets: [
+      {
+        label: "amound in DA",
+        data: [3000, 5000, 1500, 8600, 0, 2300],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+})</script>
 
 </html>
