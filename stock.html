@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salle de Sport</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="w-full h-screen bg-neutral-800">
+    <div class="relative flex w-full h-screen">
+    <!-- Header / Left Side -->
+    <header
+        class="h-screen py-12 w-[300px] bg-neutral-800 border-r-2 border-neutral-700 flex flex-col justify-between items-center"
+      >
+        <div class="flex flex-col gap-14 w-full px-8">
+          <!-- Name of Salle de sport -->
+          <div class="flex gap-4 items-center justify-center scale-[1.2]">
+            <i class="fa-solid fa-bolt fa-2xl text-emerald-200"></i>
+            <p class="text-white font-semibold">XYZ</p>
+          </div>
+
+          <!-- Identity of Manager / Admin -->
+          <div class="flex flex-col items-center">
+            <!-- Profile Picture -->
+            <div
+              class="rounded-full sm:h-[70px] sm:w-[70px] h-[100px] w-[100px] bg-red-500 overflow-hidden"
+            >
+              <img
+                class="object-fill"
+                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdigitalfirst.bfwpub.com%2Fassess_your_strengths_brb%2Fasset%2Fch07%2Fscreen-5-and-6e-arab-male-shutterstock_136789808_compressed.jpg&f=1&nofb=1&ipt=7102080e10103733c17db262c1063d0a9a43a29f7d6f5ab6999f39dfa861c63d&ipo=images"
+                alt=""
+              />
+            </div>
+            <!-- Name of Manager / Admin --> 
+            <p class="text-white  text-lg mt-4">Gym Admin name</p>
+            <!-- Edit Profile -->
+            <p
+              class="px-6 py-1 border-neutral-700 text-white border-2 mt-3 rounded-full"
+            >
+              Edit
+            </p>
+
+            <!-- Navigation -->
+            <nav class="flex flex-col w-full items-center mt-12 gap-4">
+              <div
+                class="p-4 w-full bg-neutral-700 hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-grip-vertical"></i>
+                <a href="/Acceuil.html">Acceuil</a>
+              </div>
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-dumbbell"></i>
+                <a href="/salle.html">Musculation</a>
+              </div>
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-hand-fist"></i>
+                <a href="/clubs.html">Martiaux</a>
+              </div>
+              <div
+                class="p-4 w-full hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+              >
+                <i class="fa-solid fa-gear"></i>
+                <a href="#">Parametres</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Deconnecter -->
+        <div class="px-8 w-full">
+          <div
+            class="p-4 hover:bg-neutral-700 rounded-lg text-white flex gap-4 items-center"
+          >
+            <i class="fa-solid fa-power-off"></i>
+            <a href="#">Deconnecter</a>
+          </div>
+        </div>
+    </header>
+    <!-- page title -->
+    <div class="w-[calc(100%-300px)] text-white">
+
+        <div class="text-white text-3xl m-6">
+            <h1>Stock</h1>
+
+          </div>
+          <div> 
+            <!-- product menu -->
+            <div class="grid grid-cols-6">
+                <button>Add Product</button>
+                <button></button>
+            </div>
+            <!-- products -->
+            <!-- products -->
+<div id="productContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <!-- Product cards will be added here dynamically -->
+  </div>
+  
+          </div>
+        </div>
+
+  </body>
+<style>
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #000000 #333333;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #333333;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+    border: 3px solid #333333;
+  }
+</style>
+<script>  
+const productContainer = document.getElementById("productContainer");
+
+
+const products = [
+  {
+    name: "Protein Powder",
+    description: "High-quality protein supplement",
+    quantity: 50,
+    imageUrl: "url_to_protein_powder_image.jpg",
+  },
+  {
+    name: "Pre-workout Drink",
+    description: "Boosts energy before workouts",
+    quantity: 30,
+    imageUrl: "url_to_pre_workout_image.jpg",
+  },
+  // Add more products as needed
+];
+
+
+products.forEach((product) => {
+  const productCard = document.createElement("div");
+  productCard.className = "bg-white rounded-lg shadow-md p-4 m-4";
+  productCard.innerHTML = `
+    <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-40 object-cover mb-2">
+    <h2 class="text-xl font-semibold mb-2">${product.name}</h2>
+    <p class="text-gray-600 text-sm mb-2">${product.description}</p>
+    <p class="text-gray-700">Quantity: ${product.quantity}</p>
+    <div class="mt-4">
+      <button class="bg-green-500 text-white px-4 py-2 rounded-full mr-2 hover:bg-green-600" onclick="sellProduct('${product.name}')">Sell</button>
+    </div>
+  `;
+
+  productContainer.appendChild(productCard);
+});
+// Function to handle selling a product
+function sellProduct(productName) {
+  // You can add your logic here to decrement the product quantity and handle the sale
+  alert(`Sold one unit of ${productName}`);
+  // Example: You can update the quantity in the product object and update the display
+  const product = products.find((p) => p.name === productName);
+  if (product && product.quantity > 0) {
+    product.quantity -= 1;
+    updateProductQuantity(productName, product.quantity);
+  } else {
+    alert(`No more ${productName} available`);
+  }
+}
+
+// Function to update the displayed quantity for a product
+function updateProductQuantity(productName, newQuantity) {
+  const quantityElement = document.querySelector(`#${productName}-quantity`);
+  if (quantityElement) {
+    quantityElement.textContent = `Quantity: ${newQuantity}`;
+  }
+}
+</script>
+
+</html>
