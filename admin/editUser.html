@@ -163,7 +163,14 @@
 
   </body>
   <script>
+
+
+  </script>
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
+      // here added 2
+      const urlParams = new URLSearchParams(window.location.search);
+      const userId = urlParams.get('id');
         const editFieldContainers = document.querySelectorAll('.edit-field');
 
         editFieldContainers.forEach(container => {
