@@ -108,6 +108,7 @@
             >
               <i class="fa-solid fa-magnifying-glass text-white"></i
               ><input
+                id="searchInput"
                 type="text"
                 class="bg-transparent text-lg pl-4 py-2 min-w-[40vh] border-0 ring-0 outline-0 text-white"
                 placeholder="Search for something...."
@@ -243,7 +244,7 @@
         >
           <!-- Card One -->
           <div
-            class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between"
+            class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between card"
           >
             <div class="flex items-center p-4 pt-4">
               <!-- Picture of person -->
@@ -258,9 +259,9 @@
               </div>
               <div class="text-white ml-3 text-lg capitalize">
                 <!-- person code -->
-                <div class="flex w-full justify-start">
+                <div class="flex w-full justify-start ">
                   <p
-                    class="black text-center text-sm bg-neutral-800 p-1 px-3 rounded"
+                    class="person-code black text-center text-sm bg-neutral-800 p-1 px-3 rounded"
                   >
                     112256
                   </p>
@@ -289,38 +290,7 @@
                 Online
               </p>
             </div>
-            <!-- detail extended-->
-            <!-- <div
-              id="toHide"
-              class="hidden z-50 absolute bg-neutral-600 p-8 top-[10%] left-[30%] text-xl rounded"
-            >
-              absolute bg-neutral-600 p-8 top-[10%] left-[30%] text-xl rounded
-              <div
-                class="text-white text-center grid grid-cols-2 [&>*]:border [&>*]:solid [&>*]:px-16 [&>*]:py-2"
-              >
-                <p>Abonnment :</p>
-                <p>2 mois</p>
-              </div>
-              <div
-                class="text-white text-center grid grid-cols-2 [&>*]:border [&>*]:solid [&>*]:px-16 [&>*]:py-2"
-              >
-                <p>Date de nessaince :</p>
-                <p>09/10/1994</p>
-              </div>
-              <div
-                class="text-white text-center grid grid-cols-2 [&>*]:border [&>*]:solid [&>*]:px-16 [&>*]:py-2"
-              >
-                <p>sex :</p>
-                <p>Homme</p>
-              </div>
-              <div
-                class="text-white text-center grid grid-cols-2 [&>*]:border [&>*]:solid [&>*]:px-16 [&>*]:py-2"
-              >
-                <p>Date de registrement :</p>
-                <p>11/11/2023</p>
-              </div>
-            </div> -->
-            <!-- Les bouttons d'action -->
+
             <div class="w-full bg-neutral-600 h-[60px] grid grid-cols-3">
               <!-- Editer -->
               <!-- here added ?id=USER_ID  to button-->
@@ -349,47 +319,61 @@
           </div>
 
           <!-- Card Two -->
+          <!-- Card One -->
           <div
-            class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between"
+            class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between card"
           >
-            <div class="flex items-center px-4 pt-4">
+            <div class="flex items-center p-4 pt-4">
               <!-- Picture of person -->
               <div
                 class="rounded-full h-[85px] w-[85px] bg-red-500 overflow-hidden"
               >
                 <img
                   class="object-cover h-full w-full"
-                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic6.businessinsider.com%2Fimage%2F56a8f50ddd089553198b4731-1200%2Fditch-the-smirk-when-it-comes-to-profile-pictures-only-2-of-the-top-ranked-profiles-on-okcupid-featured-people-hiding-their-smiles-instead-try-smiling-with-your-teeth.jpg&f=1&nofb=1&ipt=423933a17ee75f1c5b31981bc29e89c3008847d08286e044fe31dad2dcab3404&ipo=images"
+                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7e%2F97%2F3c%2F7e973c03ad5a2ff210a73aa7ae42c233.jpg&f=1&nofb=1&ipt=db46219cd2e048af0dae0f5fac6fe9fa82210ca93a79a03189acae3c4ae84403&ipo=images"
                   alt=""
                 />
               </div>
-              <!-- Name of person -->
-              <p class="text-white ml-3 text-lg capitalize font-semibold">
-                Anis Zitouni
-              </p>
+              <div class="text-white ml-3 text-lg capitalize">
+                <!-- person code -->
+                <div class="flex w-full justify-start ">
+                  <p
+                    class="person-code black text-center text-sm bg-neutral-800 p-1 px-3 rounded"
+                  >
+                    223344
+                  </p>
+                </div>
+                <!-- Name of person -->
+                <p class="pt-2 font-semibold">rachit lamin</p>
+                <p class="pt-2 text-sm">Entery : 2:32</p>
+              </div>
             </div>
 
             <!-- Status + Locker -->
-            <div class="flex justify-between items-center px-4">
+            <div class="flex justify-between items-center p-4">
               <p class="p-2 text-white bg-neutral-600 rounded opacity-80">
                 Member
               </p>
 
               <p class="p-2 px-4 text-white bg-neutral-600 rounded opacity-80">
-                Trainer
+                Caise
               </p>
 
               <p class="p-2 px-4 text-white bg-neutral-600 rounded opacity-80">
-                0DA
+                5000 da
               </p>
 
-              <p class="bg-red-200 p-2 px-4 rounded">Offline</p>
+              <p class="p-2 px-4 text-white bg-emerald-700 rounded opacity-80">
+                Online
+              </p>
             </div>
 
-            <!-- Les bouttons d'action -->
             <div class="w-full bg-neutral-600 h-[60px] grid grid-cols-3">
               <!-- Editer -->
+              <!-- here added ?id=USER_ID  to button-->
               <div
+              
+                onclick="location.href='./editUser.html?id=112233'"
                 class="flex items-center hover:bg-neutral-500 justify-center text-white border-r-2 border-neutral-500"
               >
                 <i class="fa-solid fa-pen-to-square"></i>
@@ -402,16 +386,17 @@
               </div>
               <!-- Details -->
               <div
+                onclick="location.href='./logPage.html'"
+                id="showDetails"
                 class="flex items-center hover:bg-neutral-500 justify-center text-white"
               >
                 <i class="fa-solid fa-circle-info"></i>
               </div>
             </div>
           </div>
-          <!-- test ........................... -->
           <!-- !-- Card Three -->
           <div
-            class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between"
+            class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between card"
           >
             <div class="flex items-center px-4 pt-4">
               <!-- Picture of person -->
@@ -472,7 +457,7 @@
 
           <!-- Card Four -->
           <div
-            class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between"
+            class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between card"
           >
             <div class="flex items-center px-4 pt-4">
               <!-- Picture of person -->
@@ -532,7 +517,7 @@
           </div>
           <!-- Card Five -->
           <div
-            class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between"
+            class="w-full h-[250px] bg-neutral-700 rounded flex flex-col justify-between card"
           >
             <div class="flex items-center px-4 pt-4">
               <!-- Picture of person -->
@@ -622,5 +607,34 @@
       let Modal = document.getElementById(ModalId);
       Modal.classList.toggle("hidden");
     }
+
+
+
+    
   </script>
+<script>
+  // Function to handle the search
+  function handleSearch() {
+  const searchInput = document.getElementById("searchInput").value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach((card) => {
+    const name = card.querySelector(".font-semibold").textContent.toLowerCase();
+    const code = card.querySelector(".person-code").textContent.toLowerCase();
+
+    if (name.includes(searchInput) || code.includes(searchInput)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+
+
+  // Add an input event listener to trigger the search
+  const searchInput = document.getElementById("searchInput");
+  searchInput.addEventListener("input", handleSearch);
+</script>
+
 </html>

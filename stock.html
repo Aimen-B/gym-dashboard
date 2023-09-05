@@ -92,10 +92,24 @@
     <!-- page title -->
     <div class="w-[calc(100%-300px)] text-white">
 
+      <div class="flex items-center">
         <div class="text-white text-3xl m-6">
             <h1>Stock</h1>
-
+            
           </div>
+          <!-- Search Bar -->
+            <div
+              class="flex items-center border-2 px-4 border-neutral-700 rounded-full"
+            >
+              <i class="fa-solid fa-magnifying-glass text-white"></i
+              ><input
+                id="searchInput"
+                type="text"
+                class="bg-transparent text-lg pl-4 py-2 min-w-[40vh] border-0 ring-0 outline-0 text-white"
+                placeholder="Search for something...."
+              />
+            </div>
+            </div>
           <div> 
             <!-- product menu -->
             <div class="grid grid-cols-6">
@@ -144,7 +158,7 @@ const products = [
     name: "Protein Powder",
     description: "High-quality protein supplement",
     quantity: 50,
-    imageUrl: "url_to_protein_powder_image.jpg",
+    imageUrl: "https://imgs.search.brave.com/mo7dNuNi-VBrpQYbpFC8IdpIyoRhT0TDdimXsfPz-VY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50Lm9wdGltdW1u/dXRyaXRpb24uY29t/L2kvb24vb24tZ29s/ZC1zdGFuZGFyZC0x/MDAtd2hleS1wcm90/ZWluX0ltYWdlXzAx/PyRUVExfUFJPRFVD/VF9JTUFHRVMkJmxv/Y2FsZT1lbi11cyxl/bi1nYiwqJnc9NTA5/JnNtPWFzcGVjdCZh/c3BlY3Q9MTox.jpeg",
   },
   {
     name: "Pre-workout Drink",
@@ -154,23 +168,58 @@ const products = [
   },
   // Add more products as needed
 ];
+// Function to display all products
+function displayAllProducts() {
+  productContainer.innerHTML = ""; // Clear the product container
+
+  products.forEach((product) => {
+    const productCard = createProductCard(product);
+    productContainer.appendChild(productCard);
+  });
+}
+
+// Call the displayAllProducts function initially to show all products
+displayAllProducts();
+
+// Function to filter and display products based on the search input
+function filterProducts() {
+  const searchInput = document.getElementById("searchInput");
+  const searchTerm = searchInput.value.toLowerCase();
+
+  productContainer.innerHTML = ""; // Clear the product container
+
+  products.forEach((product) => {
+    const productName = product.name.toLowerCase();
+    if (productName.includes(searchTerm)) {
+      const productCard = createProductCard(product);
+      productContainer.appendChild(productCard);
+    }
+  });
+}
+
+// Event listener to trigger the filter when the user types in the search bar
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("input", filterProducts);
 
 
-products.forEach((product) => {
+
+// Function to create a product card HTML element
+function createProductCard(product) {
   const productCard = document.createElement("div");
   productCard.className = "bg-white rounded-lg shadow-md p-4 m-4";
   productCard.innerHTML = `
     <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-40 object-cover mb-2">
     <h2 class="text-xl font-semibold mb-2">${product.name}</h2>
     <p class="text-gray-600 text-sm mb-2">${product.description}</p>
-    <p class="text-gray-700">Quantity: ${product.quantity}</p>
+    <p id="${product.name}-quantity" class="text-gray-700">Quantity: ${product.quantity}</p>
     <div class="mt-4">
       <button class="bg-green-500 text-white px-4 py-2 rounded-full mr-2 hover:bg-green-600" onclick="sellProduct('${product.name}')">Sell</button>
     </div>
   `;
 
-  productContainer.appendChild(productCard);
-});
+  return productCard;
+}
+
 // Function to handle selling a product
 function sellProduct(productName) {
   // You can add your logic here to decrement the product quantity and handle the sale
