@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-neutral-800 text-white m-9">
+    <div class="text-3xl m-7">
+
+        <h1>Product Management</h1>
+    </div>
+<div class="text-2xl w-full flex">
+
+    <table class="[&>*]:border" border="1">
+        <thead>
+            <tr class="[&>*]:border [&>*]:w-[200px] [&>*]:h-[60px]">
+                <th>Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="[&>*]:border text-center" id="productTable">
+            <!-- Product rows will be added here dynamically -->
+        </tbody>
+    </table>
+<div class="text-sm border ml-1 p-1">
+
+    <h2>Add a New Product</h2>
+    <form class=" [&>input]:bg-neutral-600 [&>*]:m-2" id="addProductForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br>
+        <label for="image">Image:</label>
+        <input type="file" id="image"><br>
+        <label for="price">Price:</label>
+        <input type="number" id="price" step="0.01" required><br>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" required><br>
+        <button class="bg-emerald-600 p-1 rounded" type="submit">Add Product</button>
+    </form>
+</div>
+</div>
+
+    <script>
+        const productTable = document.getElementById("productTable");
+        const addProductForm = document.getElementById("addProductForm");
+
+        const products = [
+            {
+                name: "Product 1",
+                image: "https://via.placeholder.com/50",
+                price: 10,
+                quantity: 50,
+            },
+            {
+                name: "Product 2",
+                image: "https://via.placeholder.com/50",
+                price: 20,
+                quantity: 30,
+            },
+            // Add more products as needed
+        ];
+
+        // Function to display all products in the table
+        function displayProducts() {
+            productTable.innerHTML = ""; // Clear the table
+
+            products.forEach((product, index) => {
+                const row = productTable.insertRow();
+
+                const nameCell = row.insertCell(0);
+                const imageCell = row.insertCell(1);
+                const priceCell = row.insertCell(2);
+                const quantityCell = row.insertCell(3);
+                const actionCell = row.insertCell(4);
+
+                nameCell.textContent = product.name;
+
+                // Display an image (you can use an <img> tag here)
+                imageCell.innerHTML = `<img src="${product.image}" alt="${product.name}" width="50">`;
+
+                priceCell.textContent = `${product.price.toFixed(2)} DA`;
+                quantityCell.textContent = product.quantity;
+
+                // Add buttons for editing and deleting
+                actionCell.innerHTML = `
+                    <button class='bg-blue-500 rounded p-2' ">Edit</button>
+                    <button class='bg-red-500 rounded p-2' )">Delete</button>
+                `;
+            });
+        }
+
+        // Function to add a new product
+        addProductForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const image = document.getElementById("image").value;
+            const price = parseFloat(document.getElementById("price").value);
+            const quantity = parseInt(document.getElementById("quantity").value);
+
+            if (!isNaN(price) && !isNaN(quantity)) {
+                const newProduct = { name, image, price, quantity };
+                products.push(newProduct);
+
+                // Clear form fields
+                document.getElementById("name").value = "";
+                document.getElementById("image").value = "";
+                document.getElementById("price").value = "";
+                document.getElementById("quantity").value = "";
+
+                // Display updated product list
+                displayProducts();
+            } else {
+                alert("Please enter valid price and quantity.");
+            }
+        });
+
+
+        // Initial display of products
+        displayProducts();
+    </script>
+</body>
+</html>
