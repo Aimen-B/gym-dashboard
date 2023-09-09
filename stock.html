@@ -118,10 +118,25 @@
             </div>
             <!-- products -->
             <!-- products -->
-<div id="productContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div id="productContainer" class="h-[60vh] overflow-y-scroll grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
     <!-- Product cards will be added here dynamically -->
   </div>
   
+          </div>
+          <div class="absolute w-[75%] mr-4 z-10 bottom-0 m-3">
+  
+            <div class=" justify-between  flex w-full bg-neutral-600 h-40 p-5">
+              <div class="">
+                <p class="text-xl">Items</p>
+                <div class="flex flex-wrap text-xs" id="selectedItems"></div>
+
+              </div>  
+              <div class="relative h-full w-[10%]">
+                <p class="text-xl">Total</p>
+                <div id="totalPrice">0.00</div>
+                <button class="absolute bottom-0 bg-emerald-600 p-2 ">Check out</button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -150,20 +165,69 @@
   }
 </style>
 <script>  
-const productContainer = document.getElementById("productContainer");
+      const productContainer = document.getElementById("productContainer");
+      const selectedItemsContainer = document.getElementById("selectedItems");
+      const totalPriceElement = document.getElementById("totalPrice");
 
 
-const products = [
+
+      const products = [
   {
     name: "Protein Powder",
     description: "High-quality protein supplement",
     quantity: 50,
+    price: 19.99, // Add the price property here
     imageUrl: "https://imgs.search.brave.com/mo7dNuNi-VBrpQYbpFC8IdpIyoRhT0TDdimXsfPz-VY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50Lm9wdGltdW1u/dXRyaXRpb24uY29t/L2kvb24vb24tZ29s/ZC1zdGFuZGFyZC0x/MDAtd2hleS1wcm90/ZWluX0ltYWdlXzAx/PyRUVExfUFJPRFVD/VF9JTUFHRVMkJmxv/Y2FsZT1lbi11cyxl/bi1nYiwqJnc9NTA5/JnNtPWFzcGVjdCZh/c3BlY3Q9MTox.jpeg",
   },
   {
     name: "Pre-workout Drink",
     description: "Boosts energy before workouts",
     quantity: 30,
+    price: 24.99, // Add the price property here
+    imageUrl: "url_to_pre_workout_image.jpg",
+  },
+
+
+  {
+    name: "Protein Powder",
+    description: "High-quality protein supplement",
+    quantity: 50,
+    price: 19.99, // Add the price property here
+    imageUrl: "https://imgs.search.brave.com/mo7dNuNi-VBrpQYbpFC8IdpIyoRhT0TDdimXsfPz-VY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50Lm9wdGltdW1u/dXRyaXRpb24uY29t/L2kvb24vb24tZ29s/ZC1zdGFuZGFyZC0x/MDAtd2hleS1wcm90/ZWluX0ltYWdlXzAx/PyRUVExfUFJPRFVD/VF9JTUFHRVMkJmxv/Y2FsZT1lbi11cyxl/bi1nYiwqJnc9NTA5/JnNtPWFzcGVjdCZh/c3BlY3Q9MTox.jpeg",
+  },
+  {
+    name: "Pre-workout Drink",
+    description: "Boosts energy before workouts",
+    quantity: 30,
+    price: 24.99, // Add the price property here
+    imageUrl: "url_to_pre_workout_image.jpg",
+  },
+  {
+    name: "Protein Powder",
+    description: "High-quality protein supplement",
+    quantity: 50,
+    price: 19.99, // Add the price property here
+    imageUrl: "https://imgs.search.brave.com/mo7dNuNi-VBrpQYbpFC8IdpIyoRhT0TDdimXsfPz-VY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50Lm9wdGltdW1u/dXRyaXRpb24uY29t/L2kvb24vb24tZ29s/ZC1zdGFuZGFyZC0x/MDAtd2hleS1wcm90/ZWluX0ltYWdlXzAx/PyRUVExfUFJPRFVD/VF9JTUFHRVMkJmxv/Y2FsZT1lbi11cyxl/bi1nYiwqJnc9NTA5/JnNtPWFzcGVjdCZh/c3BlY3Q9MTox.jpeg",
+  },
+  {
+    name: "Pre-workout Drink",
+    description: "Boosts energy before workouts",
+    quantity: 30,
+    price: 24.99, // Add the price property here
+    imageUrl: "url_to_pre_workout_image.jpg",
+  },
+  {
+    name: "Protein Powder",
+    description: "High-quality protein supplement",
+    quantity: 50,
+    price: 19.99, // Add the price property here
+    imageUrl: "https://imgs.search.brave.com/mo7dNuNi-VBrpQYbpFC8IdpIyoRhT0TDdimXsfPz-VY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50Lm9wdGltdW1u/dXRyaXRpb24uY29t/L2kvb24vb24tZ29s/ZC1zdGFuZGFyZC0x/MDAtd2hleS1wcm90/ZWluX0ltYWdlXzAx/PyRUVExfUFJPRFVD/VF9JTUFHRVMkJmxv/Y2FsZT1lbi11cyxl/bi1nYiwqJnc9NTA5/JnNtPWFzcGVjdCZh/c3BlY3Q9MTox.jpeg",
+  },
+  {
+    name: "Pre-workout Drink",
+    description: "Boosts energy before workouts",
+    quantity: 30,
+    price: 24.99, // Add the price property here
     imageUrl: "url_to_pre_workout_image.jpg",
   },
   // Add more products as needed
@@ -208,10 +272,11 @@ function createProductCard(product) {
   const productCard = document.createElement("div");
   productCard.className = "bg-white rounded-lg shadow-md p-4 m-4";
   productCard.innerHTML = `
-    <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-40 object-cover mb-2">
-    <h2 class="text-xl font-semibold mb-2">${product.name}</h2>
+    <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-20 object-cover mb-1">
+    <h2 class="text-xl text-black font-semibold mb-2">${product.name}</h2>
     <p class="text-gray-600 text-sm mb-2">${product.description}</p>
     <p id="${product.name}-quantity" class="text-gray-700">Quantity: ${product.quantity}</p>
+    <p class="text-emerald-600 text-lg font-semibold mb-2">${product.price.toFixed(2)} DA</p> <!-- Add this line for displaying the price -->
     <div class="mt-4">
       <button class="bg-green-500 text-white px-4 py-2 rounded-full mr-2 hover:bg-green-600" onclick="sellProduct('${product.name}')">Sell</button>
     </div>
@@ -220,27 +285,71 @@ function createProductCard(product) {
   return productCard;
 }
 
+
 // Function to handle selling a product
 function sellProduct(productName) {
-  // You can add your logic here to decrement the product quantity and handle the sale
-  alert(`Sold one unit of ${productName}`);
-  // Example: You can update the quantity in the product object and update the display
-  const product = products.find((p) => p.name === productName);
-  if (product && product.quantity > 0) {
-    product.quantity -= 1;
-    updateProductQuantity(productName, product.quantity);
-  } else {
-    alert(`No more ${productName} available`);
-  }
-}
+        const product = products.find((p) => p.name === productName);
+        if (product && product.quantity > 0) {
+          product.quantity -= 1;
 
-// Function to update the displayed quantity for a product
-function updateProductQuantity(productName, newQuantity) {
-  const quantityElement = document.querySelector(`#${productName}-quantity`);
-  if (quantityElement) {
-    quantityElement.textContent = `Quantity: ${newQuantity}`;
+          // Update the product quantity
+          updateProductQuantity(productName, product.quantity);
+          
+          // Update the selected items and total price
+          addToSelectedItems(product);
+        } else {
+          alert(`No more ${productName} available`);
+        }
+      }
+
+      // Function to update the displayed quantity for a product
+      function updateProductQuantity(productName, newQuantity) {
+        const quantityElement = document.querySelector(`#${productName}-quantity`);
+        if (quantityElement) {
+          quantityElement.textContent = `Quantity: ${newQuantity}`;
+        }
+      }
+
+      // Function to add a product to the selected items and update the total price
+      function addToSelectedItems(product) {
+        const selectedItemElement = document.createElement("div");
+        selectedItemElement.className = "flex items-center p-2 justify-between border-b border-neutral-600";
+        selectedItemElement.innerHTML = `
+          <div class="flex items-center gap-2">
+            <img src="${product.imageUrl}" alt="${product.name}" class="w-8 h-8 object-cover rounded-full">
+            <p>${product.name}</p>
+          </div>
+          <button class="bg-red-500 text-white px-2 py-1 rounded-full" onclick="removeSelectedItem(this.parentElement, '${product.name}', ${product.price.toFixed(2)})">X</button>
+        `;
+
+        selectedItemsContainer.appendChild(selectedItemElement);
+
+        // Update the total price
+        updateTotalPrice(product.price);
+      }
+
+      // Function to remove a selected item and update the total price
+      function removeSelectedItem(selectedItemElement, productName, productPrice) {
+      selectedItemsContainer.removeChild(selectedItemElement);
+        
+        // Update the total price
+        updateTotalPrice(-productPrice);
+
+        // Add the quantity back to the product
+ // Add the quantity back to the product
+ const product = products.find((p) => p.name === productName);
+  if (product) {
+    product.quantity += 1;
+    updateProductQuantity(productName, product.quantity);
   }
-}
+      }
+
+      // Helper function to update the total price
+      function updateTotalPrice(priceChange) {
+        const currentTotalPrice = parseFloat(totalPriceElement.textContent);
+        const newTotalPrice = currentTotalPrice + priceChange;
+        totalPriceElement.textContent = newTotalPrice.toFixed(2);
+      }
 </script>
 
 </html>
